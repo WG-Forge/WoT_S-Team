@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PacketEditor.WPF": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

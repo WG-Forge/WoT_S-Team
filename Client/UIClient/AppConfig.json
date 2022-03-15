@@ -1,0 +1,10 @@
+{
+  "AppConfigJson": {
+    "HostName": "wgforge-srv.wargaming.net",
+    "Port": 443,
+	"FullScreen": true,
+	"Width": 1024,
+	"Height": 768,
+	"Song": true
+  }
+}

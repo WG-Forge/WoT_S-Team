@@ -1,0 +1,6 @@
+.vs/
+Build/
+Packages/
+Product/
+Client/UIClient/bin
+Client/UIClient/obj

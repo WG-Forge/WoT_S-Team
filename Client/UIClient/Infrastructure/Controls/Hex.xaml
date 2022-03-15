@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="UIClient.Infrastructure.Controls.Hex"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UIClient.Infrastructure.Controls"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:b="clr-namespace:UIClient.Infrastructure.Behavior"
+             mc:Ignorable="d" 
+             d:DesignHeight="35" d:DesignWidth="40"
+             Width="40" Height="35"
+             x:Name="CurrentControl"
+             DataContext="{Binding GamePageViewModel, Source={StaticResource Locator}}"
+             IsEnabled="{Binding Field.StepEnable}">
+    <Grid>
+        <Button x:Name="Btn" Style="{StaticResource ButtonFreeHex}"
+                Content="{Binding Path=Tank, ElementName=CurrentControl}"/>
+    </Grid>
+
+    <i:Interaction.Behaviors>
+        <b:HexBehavior/>
+    </i:Interaction.Behaviors>
+</UserControl>

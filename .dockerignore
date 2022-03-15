@@ -1,0 +1,11 @@
+.git
+.vs
+
+Product
+Build
+Client/UIClient/obj
+
+.dockerignore
+.gitignore
+Dockerfile
+README.md

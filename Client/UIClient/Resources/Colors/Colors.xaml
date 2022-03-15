@@ -1,0 +1,101 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="ControlNormalBackgroundColor">Transparent</Color>
+    <SolidColorBrush x:Key="ControlNormalBackgroundBrush" Color="{StaticResource ControlNormalBackgroundColor}"/>
+    <Color x:Key="ControlMouseOverBackgroundColor">#44f85706</Color>
+    <SolidColorBrush x:Key="ControlMouseOverBackgroundBrush" Color="{StaticResource ControlMouseOverBackgroundColor}"/>
+    <Color x:Key="ControlPressedBackgroundColor">#77f85706</Color>
+    <SolidColorBrush x:Key="ControlPressedBackgroundBrush" Color="{StaticResource ControlPressedBackgroundColor}"/>
+    <Color x:Key="ControlDisabledBackgroundColor">#44AEAEAE</Color>
+    <SolidColorBrush x:Key="ControlDisabledBackgroundBrush" Color="{StaticResource ControlDisabledBackgroundColor}"/>
+
+    <Color x:Key="ControlNormalBorderColor">#44AEAEAE</Color>
+    <SolidColorBrush x:Key="ControlNormalBorderBrush" Color="{StaticResource ControlNormalBorderColor}"/>
+    <Color x:Key="ControlMouseOverBorderColor">#FFf85706</Color>
+    <SolidColorBrush x:Key="ControlMouseOverBorderBrush" Color="{StaticResource ControlMouseOverBorderColor}"/>
+    <Color x:Key="ControlPressedBorderColor">#FFFBA210</Color>
+    <SolidColorBrush x:Key="ControlPressedBorderBrush" Color="{StaticResource ControlPressedBorderColor}"/>
+    <Color x:Key="ControlDisabledBorderColor">#FFAEAEAE</Color>
+    <SolidColorBrush x:Key="ControlDisabledBorderBrush" Color="{StaticResource ControlDisabledBorderColor}"/>
+
+    <Color x:Key="ControlBackgroundColor">#FF1E1E1E</Color>
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{StaticResource ControlBackgroundColor}"/>
+
+    <!--rock-->
+    <Color x:Key="RockNormalBackgroundColor">#11c88770</Color>
+    <SolidColorBrush x:Key="RockNormalBackgroundBrush" Color="{StaticResource RockNormalBackgroundColor}"/>
+    <Color x:Key="RockMouseOverBackgroundColor">#33c88770</Color>
+    <SolidColorBrush x:Key="RockMouseOverBackgroundBrush" Color="{StaticResource RockMouseOverBackgroundColor}"/>
+    <Color x:Key="RockPressedBackgroundColor">#AAc88770</Color>
+    <SolidColorBrush x:Key="RockPressedBackgroundBrush" Color="{StaticResource RockPressedBackgroundColor}"/>
+    <Color x:Key="RockDisabledBackgroundColor">#44AEAEAE</Color>
+    <SolidColorBrush x:Key="RockDisabledBackgroundBrush" Color="{StaticResource RockDisabledBackgroundColor}"/>
+
+    <Color x:Key="RockNormalBorderColor">#77c88770</Color>
+    <SolidColorBrush x:Key="RockNormalBorderBrush" Color="{StaticResource RockNormalBorderColor}"/>
+    <Color x:Key="RockMouseOverBorderColor">#FFc88770</Color>
+    <SolidColorBrush x:Key="RockMouseOverBorderBrush" Color="{StaticResource RockMouseOverBorderColor}"/>
+    <Color x:Key="RockPressedBorderColor">#FFc88770</Color>
+    <SolidColorBrush x:Key="RockPressedBorderBrush" Color="{StaticResource RockPressedBorderColor}"/>
+    <Color x:Key="RockDisabledBorderColor">#FFAEAEAE</Color>
+    <SolidColorBrush x:Key="RockDisabledBorderBrush" Color="{StaticResource RockDisabledBorderColor}"/>
+
+    <!--base-->
+    <Color x:Key="BaseNormalBackgroundColor">#11aec55d</Color>
+    <SolidColorBrush x:Key="BaseNormalBackgroundBrush" Color="{StaticResource BaseNormalBackgroundColor}"/>
+    <Color x:Key="BaseMouseOverBackgroundColor">#33aec55d</Color>
+    <SolidColorBrush x:Key="BaseMouseOverBackgroundBrush" Color="{StaticResource BaseMouseOverBackgroundColor}"/>
+    <Color x:Key="BasePressedBackgroundColor">#AAaec55d</Color>
+    <SolidColorBrush x:Key="BasePressedBackgroundBrush" Color="{StaticResource BasePressedBackgroundColor}"/>
+    <Color x:Key="BaseDisabledBackgroundColor">#44AEAEAE</Color>
+    <SolidColorBrush x:Key="BaseDisabledBackgroundBrush" Color="{StaticResource BaseDisabledBackgroundColor}"/>
+
+    <Color x:Key="BaseNormalBorderColor">#77aec55d</Color>
+    <SolidColorBrush x:Key="BaseNormalBorderBrush" Color="{StaticResource BaseNormalBorderColor}"/>
+    <Color x:Key="BaseMouseOverBorderColor">#FFaec55d</Color>
+    <SolidColorBrush x:Key="BaseMouseOverBorderBrush" Color="{StaticResource BaseMouseOverBorderColor}"/>
+    <Color x:Key="BasePressedBorderColor">#FFaec55d</Color>
+    <SolidColorBrush x:Key="BasePressedBorderBrush" Color="{StaticResource BasePressedBorderColor}"/>
+    <Color x:Key="BaseDisabledBorderColor">#FFAEAEAE</Color>
+    <SolidColorBrush x:Key="BaseDisabledBorderBrush" Color="{StaticResource BaseDisabledBorderColor}"/>
+
+    <!--spawn-->
+    <Color x:Key="SpawnNormalBackgroundColor">#117f6791</Color>
+    <SolidColorBrush x:Key="SpawnNormalBackgroundBrush" Color="{StaticResource SpawnNormalBackgroundColor}"/>
+    <Color x:Key="SpawnMouseOverBackgroundColor">#337f6791</Color>
+    <SolidColorBrush x:Key="SpawnMouseOverBackgroundBrush" Color="{StaticResource SpawnMouseOverBackgroundColor}"/>
+    <Color x:Key="SpawnPressedBackgroundColor">#AA7f6791</Color>
+    <SolidColorBrush x:Key="SpawnPressedBackgroundBrush" Color="{StaticResource SpawnPressedBackgroundColor}"/>
+    <Color x:Key="SpawnDisabledBackgroundColor">#44AEAEAE</Color>
+    <SolidColorBrush x:Key="SpawnDisabledBackgroundBrush" Color="{StaticResource SpawnDisabledBackgroundColor}"/>
+
+    <Color x:Key="SpawnNormalBorderColor">#777f6791</Color>
+    <SolidColorBrush x:Key="SpawnNormalBorderBrush" Color="{StaticResource SpawnNormalBorderColor}"/>
+    <Color x:Key="SpawnMouseOverBorderColor">#FF7f6791</Color>
+    <SolidColorBrush x:Key="SpawnMouseOverBorderBrush" Color="{StaticResource SpawnMouseOverBorderColor}"/>
+    <Color x:Key="SpawnPressedBorderColor">#FF7f6791</Color>
+    <SolidColorBrush x:Key="SpawnPressedBorderBrush" Color="{StaticResource SpawnPressedBorderColor}"/>
+    <Color x:Key="SpawnDisabledBorderColor">#FFAEAEAE</Color>
+    <SolidColorBrush x:Key="SpawnDisabledBorderBrush" Color="{StaticResource SpawnDisabledBorderColor}"/>
+
+    <!--adv_el-->
+    <Color x:Key="ElementNormalBackgroundColor">#1100AEFF</Color>
+    <SolidColorBrush x:Key="ElementNormalBackgroundBrush" Color="{StaticResource ElementNormalBackgroundColor}"/>
+    <Color x:Key="ElementMouseOverBackgroundColor">#3300AEFF</Color>
+    <SolidColorBrush x:Key="ElementMouseOverBackgroundBrush" Color="{StaticResource ElementMouseOverBackgroundColor}"/>
+    <Color x:Key="ElementPressedBackgroundColor">#AA00AEFF</Color>
+    <SolidColorBrush x:Key="ElementPressedBackgroundBrush" Color="{StaticResource ElementPressedBackgroundColor}"/>
+    <Color x:Key="ElementDisabledBackgroundColor">#44AEAEAE</Color>
+    <SolidColorBrush x:Key="ElementDisabledBackgroundBrush" Color="{StaticResource ElementDisabledBackgroundColor}"/>
+
+    <Color x:Key="ElementNormalBorderColor">#7700AEFF</Color>
+    <SolidColorBrush x:Key="ElementNormalBorderBrush" Color="{StaticResource ElementNormalBorderColor}"/>
+    <Color x:Key="ElementMouseOverBorderColor">#FF00AEFF</Color>
+    <SolidColorBrush x:Key="ElementMouseOverBorderBrush" Color="{StaticResource ElementMouseOverBorderColor}"/>
+    <Color x:Key="ElementPressedBorderColor">#FF00EEFF</Color>
+    <SolidColorBrush x:Key="ElementPressedBorderBrush" Color="{StaticResource ElementPressedBorderColor}"/>
+    <Color x:Key="ElementDisabledBorderColor">#FFAEAEAE</Color>
+    <SolidColorBrush x:Key="ElementDisabledBorderBrush" Color="{StaticResource ElementDisabledBorderColor}"/>
+
+</ResourceDictionary>

@@ -1,0 +1,176 @@
+﻿<Page x:Class="UIClient.View.Pages.LoadPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UIClient.View.Pages"
+      xmlns:vm="clr-namespace:UIClient.ViewModel" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:b="clr-namespace:UIClient.Infrastructure.Behavior"
+      FontFamily="{StaticResource HeliosCond}"
+     d:DesignWidth="1024" d:DesignHeight="768" 
+      DataContext="{Binding LoadPageViewModel, Source={StaticResource Locator}}">
+    <Page.Resources>
+        <Storyboard x:Key="LoadAnimation" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource LoadAnimation}"/>
+        </EventTrigger>
+    </Page.Triggers>
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="{Binding Image}" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="0"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1" Visibility="{Binding IsControlVisible}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Right" Margin="10 0" Text="Имя:" FontSize="18" VerticalAlignment="Center" 
+                               Foreground="{StaticResource ControlMouseOverBorderBrush}"/>
+                <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10 0" Grid.Row="2" Height="30" Width="170" FontSize="18" 
+                             HorizontalContentAlignment="Left"
+                             Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Visibility="{Binding IsControlVisible}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Right" Margin="10 0" Text="Пароль:" FontSize="18" VerticalAlignment="Center" 
+                               Foreground="{StaticResource ControlMouseOverBorderBrush}"/>
+                <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10 0" Grid.Row="2" Height="30" Width="170" FontSize="18" 
+                             HorizontalContentAlignment="Left"
+                             Text="{Binding Pass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+
+            <Grid Grid.Row="3" Visibility="{Binding IsControlVisible}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Right" Margin="10 0" Text="Имя игры:" FontSize="18" VerticalAlignment="Center" 
+                               Foreground="{StaticResource ControlMouseOverBorderBrush}"/>
+                <TextBox Grid.Column="1" HorizontalAlignment="Left" Margin="10 0" Grid.Row="2" Height="30" Width="170" FontSize="18" 
+                             HorizontalContentAlignment="Left"
+                             Text="{Binding GameName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+
+            <Grid Grid.Row="4" Visibility="{Binding IsControlVisible}">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Left" Margin="10 0" Text="Игроки:" FontSize="18" VerticalAlignment="Center" 
+                               Foreground="{StaticResource ControlMouseOverBorderBrush}"/>
+                    <TextBox HorizontalAlignment="Right" Grid.Row="2" Height="30" Width="60" FontSize="18" 
+                             HorizontalContentAlignment="Center"
+                             Text="{Binding PlayersMax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10 0" Text="Ходы:" FontSize="18" VerticalAlignment="Center" 
+                               Foreground="{StaticResource ControlMouseOverBorderBrush}"/>
+                    <TextBox HorizontalAlignment="Right" Margin="0 0 10 0" Grid.Row="2" Height="30" Width="60" FontSize="18" 
+                             HorizontalContentAlignment="Center"
+                             Text="{Binding TurnMax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <CheckBox Content="Наблюдать" FontSize="18" Margin="10 0" HorizontalAlignment="Left"
+                                IsChecked="{Binding IsObserver, Mode=TwoWay}" Foreground="{StaticResource ControlPressedBorderBrush}"
+                                Height="30" Style="{StaticResource CheckboxStyle}" Focusable="False"/>
+                    <CheckBox Content="AI" FontSize="18" HorizontalAlignment="Left"
+                                IsChecked="{Binding GamePageViewModel.Field.AIEnable, Source={StaticResource Locator}}" Foreground="{StaticResource ControlPressedBorderBrush}"
+                                Height="30" Style="{StaticResource CheckboxStyle}" Focusable="False"/>
+
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="5" Visibility="{Binding IsControlVisible}">
+                <Button Width="170" Grid.Row="3" Command="{Binding LoginCommand}" Margin="10 0"
+                                Height="40" FontSize="18" Style="{StaticResource ButtonCustom}" 
+                                VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button.Content>
+                        <TextBlock Grid.Column="0" Text="Войти" FontSize="26">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Offset="0.1" Color="{StaticResource ControlPressedBorderColor}" />
+                                        <GradientStop Offset="1" Color="{StaticResource ControlMouseOverBorderColor}" />
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <TextBlock x:Name="text_block" Visibility="{Binding IsLoadVisible}" Grid.Row="3" Text="Загрузка..." VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontSize="22" Foreground="{StaticResource ControlMouseOverBorderBrush}"/>
+
+            <Rectangle x:Name="rectangle" Grid.Row ="3" Visibility="{Binding IsLoadVisible}" HorizontalAlignment="Center" Height="3" 
+                           Width="200" StrokeThickness="0" 
+                           VerticalAlignment="Bottom">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Transparent" Offset="0"/>
+                        <GradientStop Color="{StaticResource ControlMouseOverBorderColor}" Offset="0.5"/>
+                        <GradientStop Color="Transparent" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid Visibility="{Binding IsControlVisible}" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Height="50" Source="/Resources/Images/forge.png"/>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="WG Forge" FontSize="12" VerticalAlignment="Center" 
+                               Foreground="{StaticResource ControlMouseOverBorderBrush}"/>
+                    </Grid>
+
+                    <Grid Margin="10 0 0 0">
+                        <Grid.RowDefinitions> 
+                            <RowDefinition/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Height="50" Source="/Resources/Images/wg.png"/>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="wargaming.net" FontSize="12" VerticalAlignment="Center" 
+                               Foreground="{StaticResource ControlMouseOverBorderBrush}"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Page>

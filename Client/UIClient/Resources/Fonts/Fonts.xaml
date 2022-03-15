@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="FontIcons">pack://application:,,,/Resources/Fonts/#dripicons-v2</FontFamily>
+    <FontFamily x:Key="IonIcons">pack://application:,,,/Resources/Fonts/#Ionicons</FontFamily>
+    <FontFamily x:Key="HeliosCond">pack://application:,,,/Resources/Fonts/#HeliosCond</FontFamily>
+</ResourceDictionary>
