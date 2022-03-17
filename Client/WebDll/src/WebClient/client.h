@@ -24,7 +24,7 @@ namespace web_client
 		~client();
 		result connect(const SOCKADDR_IN& addr);
 		result detach();
-		result send_packet(web_actions action, int size, byte* data, int* out_size, byte* out_data);
+		result send_packet(web_actions action, int size, byte* body, int* out_size, byte* out_data);
 
 	private:
 		result _init();

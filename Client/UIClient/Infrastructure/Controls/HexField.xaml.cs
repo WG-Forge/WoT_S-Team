@@ -408,6 +408,7 @@ namespace UIClient.Infrastructure.Controls
                 list = GetCanShootPT(hex, tank.ShootMax + tank.Vehicle.vehicle.shoot_range_bonus);
             else
                 list = GetHexAround(hex.Point3, tank.ShootMin, tank.ShootMax + tank.Vehicle.vehicle.shoot_range_bonus);
+
             list.RemoveAll(item => item.Tank == null || item.Tank.Vehicle.vehicle.player_id == Player.CurrentPlayer.idx);
             return list;
         }

@@ -41,14 +41,14 @@ namespace web_client
 		}
 		return result::OKEY;
 	}
-	result client::send_packet(web_actions action, int size, byte* data, int* out_size, byte* out_data)
+	result client::send_packet(web_actions action, int size, byte* body, int* out_size, byte* out_data)
 	{
 		if (!_connected) return result::CONNECTED_FALSE;
 		if (!_send_all(&action, sizeof(action)) || !_send_all(&size, sizeof(size)))
 			return result::ERROR_SEND;
 
 		if (size)
-			if (!_send_all(data, size))
+			if (!_send_all(body, size))
 				return result::ERROR_SEND;
 
 		result res;

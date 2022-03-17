@@ -35,10 +35,10 @@ extern "C"
 		return web->detach();
 	}
 
-	__declspec(dllexport) result send_packet(web_client::client* web, web_client::web_actions action, int size, byte* data, int* out_size, byte* out_data)
+	__declspec(dllexport) result send_packet(web_client::client* web, web_client::web_actions action, int size, byte* body, int* out_size, byte* out_data)
 	{
 		if (!web) return result::IVALID_PARAM;
-		return web->send_packet(action, size, data, out_size, out_data);
+		return web->send_packet(action, size, body, out_size, out_data);
 	}
 
 	__declspec(dllexport) result destroy_wc(web_client::client* web)
